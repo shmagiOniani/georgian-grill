@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { Form, Input } from "antd";
+import { ShoppingCartOutlined, SearchOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 
@@ -33,6 +35,17 @@ const navigationArr = [
 ];
 
 function Navbar() {
+  const [searchVisible, setSearchVisible] = useState(false);
+  const [form] = Form.useForm();
+
+  const searchToggle = () => {
+    setSearchVisible((prev) => !prev);
+  };
+
+  const onFinish = () => {
+    console.log(form.getFieldValue().search);
+  };
+
   return (
     <div className="nav-wrapper">
       <div className="nav-container">
@@ -48,7 +61,28 @@ function Navbar() {
             })}
           </ul>
         </div>
-        <div className="user">user staff</div>
+        <div className="search-cart">
+          <div className="search">
+            <Form
+              form={form}
+              layout="vertical"
+              onFinish={onFinish}
+              autoComplete="off"
+              onBlur={searchToggle}
+            >
+              <Form.Item name="search">
+                <Input
+                  className={searchVisible && "active"}
+                  placeholder="Search..."
+                />
+              </Form.Item>
+            </Form>
+            <SearchOutlined onClick={searchToggle} />
+          </div>
+          <div className="cart">
+            <ShoppingCartOutlined />
+          </div>
+        </div>
       </div>
     </div>
   );

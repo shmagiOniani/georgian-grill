@@ -8,9 +8,16 @@
     display: flex;
     justify-content: space-between;
     .logo {
+      display: flex;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      font-size: 30px;
+      line-height: normal;
+      width: 300px;
+      color: #ff5a00;
     }
     .navigation {
-      width: 70;
+      width: 600px;
       ul {
         padding-top: 20px;
         display: flex;
@@ -29,11 +36,54 @@
             color: #fff;
             display: block;
             font-weight: 500;
+            transition: all 0.3s ease;
+            &:hover {
+              color: #ff5a00;
+            }
           }
         }
       }
     }
-    .user {
+    .search-cart {
+      width: 300px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      .search {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 20px;
+        .ant-form-item {
+          margin: 0 10px;
+          .ant-input {
+            width: 0;
+            padding: 0;
+            border: 0;
+          }
+          .active {
+            width: 180px;
+            padding: 10px;
+            border: 0;
+          }
+        }
+      }
+      .cart {
+      }
+      .anticon {
+        &:hover {
+          cursor: pointer;
+          svg {
+            fill: #ff5a00;
+          }
+        }
+        svg {
+          fill: white;
+          width: 24px;
+          height: 24px;
+          transition: all 0.3s ease;
+        }
+      }
     }
   }
 }

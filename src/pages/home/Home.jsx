@@ -3,6 +3,7 @@ import { Carousel } from "antd";
 import { bg1, bg2, bg3, bg4, bg5 } from "../../assets/images";
 import "./Home.scss";
 import "antd/dist/antd.css";
+import NewProduct from "./NewProduct";
 
 const imgArr = [
   {
@@ -51,7 +52,7 @@ function Home() {
           );
         })}
       </Carousel>
-      ,
+      <NewProduct />
     </div>
   );
 }

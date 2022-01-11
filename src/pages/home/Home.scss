@@ -1,9 +1,44 @@
 .home-wrapper {
   .ant-carousel {
+    z-index: 1;
     .slick-slide {
       .slider-item {
         height: 90vh !important;
         background-color: green;
+      }
+    }
+  }
+  .new-product-wrapper {
+    background-color: white;
+    .new-product-container {
+      position: relative;
+      margin: auto;
+      width: 100%;
+      max-width: 1320px;
+      .container {
+        position: absolute;
+        top: -70px;
+        z-index: 100;
+        width: 100%;
+        box-shadow: 1px 1.732px 10px 0px rgb(0 0 0 / 20%);
+        padding: 60px 45px;
+        background: #ffffff;
+        .ant-row {
+          & > .ant-col {
+            min-height: 750px;
+            padding: 0 30px;
+          }
+          .product-col {
+            background-color: #f7f7f7;
+
+            .product-image {
+            }
+            .product-desc {
+            }
+            .product-price {
+            }
+          }
+        }
       }
     }
   }
