@@ -1,0 +1,39 @@
+.nav-wrapper {
+  background-color: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  .nav-container {
+    max-width: 1320px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+    }
+    .navigation {
+      width: 70;
+      ul {
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li {
+          display: inline-block;
+          font-size: 14px;
+          vertical-align: top;
+          a {
+            height: 40px;
+            font-size: 16px;
+            padding: 0px 15px;
+            line-height: 40px;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .user {
+    }
+  }
+}
