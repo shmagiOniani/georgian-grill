@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "antd";
 import "antd/dist/antd.css";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import Slider from "react-slick";
 import { bg1, bg2, bg3, bg4, bg5 } from "../../assets/images";
 import { NewProduct } from "./components";
 import "./Home.scss";
@@ -35,6 +36,17 @@ const imgArr = [
 ];
 
 function Home() {
+  const sliderSettings = {
+    arrows: true,
+    dots: false,
+    prevArrow: <ArrowLeftOutlined />,
+    nextArrow: <ArrowRightOutlined />,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
+
   return (
     <div className="home-wrapper">
       <Carousel
@@ -55,6 +67,26 @@ function Home() {
       <div className="best-choice-header">
         <div>საუკეთესო არჩევანი</div>
         <div>ჩვენი ყველაზე გაყიდვადი პროდუქტი</div>
+      </div>
+      <div className="best-choice-wrapper">
+        <Carousel {...sliderSettings}>
+          {imgArr.map((item, index) => {
+            return (
+              <div className="slider-item" key={index}>
+                <div className="best-choice-image">
+                  <img
+                    alt="example"
+                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                  />
+                </div>
+                <div className="best-choice-desc">
+                  <div>პროდუქტის აღწერა</div>
+                  <div>$550.00</div>
+                </div>
+              </div>
+            );
+          })}
+        </Carousel>
       </div>
     </div>
   );

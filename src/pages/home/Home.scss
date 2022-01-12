@@ -6,6 +6,7 @@
     z-index: 1;
     position: relative;
     .slick-slider {
+      overflow: hidden;
       .slick-arrow {
         position: absolute;
         top: 50%;
@@ -17,17 +18,33 @@
         display: flex !important;
         justify-content: center;
         align-items: center;
+        transition: all 0.3s ease-in;
+        &:hover {
+          border: 1px solid #ff5a00;
+          background-color: #fff;
+          svg {
+            fill: #ff5a00;
+          }
+        }
         svg {
           width: 20px;
           height: 20px;
           fill: #a7a7a7;
         }
       }
+      &:hover {
+        .slick-prev {
+          left: 5%;
+        }
+        .slick-next {
+          right: 5%;
+        }
+      }
       .slick-prev {
-        left: 5%;
+        left: -5%;
       }
       .slick-next {
-        right: 5%;
+        right: -5%;
       }
       .slider-item {
         height: 160px;
@@ -68,6 +85,75 @@
           width: 80px;
           height: 4px;
           background-color: #ff5a00;
+      }
+    }
+  }
+  .best-choice-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .slick-slider {
+      max-width: 1320px;
+      overflow:visible;
+
+      .slick-arrow {
+        border: 1px solid #000000;
+        &:hover {
+          svg {
+          }
+        }
+        svg {
+   
+        }
+      }
+      &:hover {
+        .slick-prev {
+          left: -5%;
+        }
+        .slick-next {
+          right: -5%;
+        }
+      }
+      .slick-prev {
+        left: -5%;
+      }
+      .slick-next {
+        right: -5%;
+      }
+      .slider-item {
+        height: 416px;
+        background-color: #ffffff;
+        margin: 0 10px;
+        .best-choice-image {
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #959595;
+          width: 298px;
+          height: 298px;
+          &:hover {
+          border: 1px solid #ff5a00;
+          cursor: pointer;
+          }
+        }
+        .best-choice-desc {
+          div:first-child {
+            font-family: "Crystal-Bold";
+            letter-spacing: 2px;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 50px;
+            color: #1a1a1a;
+          }
+          div:last-child {
+            font-family: "Crystal-Bold";
+            margin-bottom: 9px;
+            font-size: 18px;
+            line-height: normal;
+            color: #ff5a00;
+          }
+        }
       }
     }
   }
