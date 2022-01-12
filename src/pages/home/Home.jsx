@@ -1,9 +1,10 @@
 import React from "react";
 import { Carousel } from "antd";
-import { bg1, bg2, bg3, bg4, bg5 } from "../../assets/images";
-import "./Home.scss";
 import "antd/dist/antd.css";
-import NewProduct from "./NewProduct";
+import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import { bg1, bg2, bg3, bg4, bg5 } from "../../assets/images";
+import { NewProduct } from "./components";
+import "./Home.scss";
 
 const imgArr = [
   {
@@ -34,15 +35,13 @@ const imgArr = [
 ];
 
 function Home() {
-  const contentStyle = {
-    color: "#fff",
-    lineHeight: "160px",
-    textAlign: "center",
-    background: "#364d79",
-  };
   return (
     <div className="home-wrapper">
-      <Carousel dotPosition="right">
+      <Carousel
+        arrows
+        prevArrow={<ArrowLeftOutlined />}
+        nextArrow={<ArrowRightOutlined />}
+      >
         {imgArr.map((grill, index) => {
           return (
             <div key={index} className="slider-item">
@@ -53,6 +52,10 @@ function Home() {
         })}
       </Carousel>
       <NewProduct />
+      <div className="best-choice-header">
+        <div>საუკეთესო არჩევანი</div>
+        <div>ჩვენი ყველაზე გაყიდვადი პროდუქტი</div>
+      </div>
     </div>
   );
 }

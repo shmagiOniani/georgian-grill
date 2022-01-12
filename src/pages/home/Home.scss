@@ -1,44 +1,73 @@
+@import "../../styles//animation.scss";
+@import "../../styles//fonts.scss";
+
 .home-wrapper {
   .ant-carousel {
     z-index: 1;
-    .slick-slide {
+    position: relative;
+    .slick-slider {
+      .slick-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 10000;
+        border: 1px solid #959595;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        svg {
+          width: 20px;
+          height: 20px;
+          fill: #a7a7a7;
+        }
+      }
+      .slick-prev {
+        left: 5%;
+      }
+      .slick-next {
+        right: 5%;
+      }
       .slider-item {
-        height: 90vh !important;
-        background-color: green;
+        height: 160px;
+        color: #fff;
+        line-height: 160px;
+        text-align: center;
+        background-color: #30353e;
+        height: 90vh;
       }
     }
   }
-  .new-product-wrapper {
-    background-color: white;
-    .new-product-container {
+  .best-choice-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    div:first-child {
+      font-family: "Crystal";
+      margin-bottom: 7px;
+      font-size: 18px;
+      line-height: normal;
+      color: #ff5a00;
+    }
+    div:last-child {
+      font-family: "Crystal-Bold";
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 50px;
+      color: #1a1a1a;
+      margin-bottom: 60px;
+      padding-bottom: 28px;
       position: relative;
-      margin: auto;
-      width: 100%;
-      max-width: 1320px;
-      .container {
-        position: absolute;
-        top: -70px;
-        z-index: 100;
-        width: 100%;
-        box-shadow: 1px 1.732px 10px 0px rgb(0 0 0 / 20%);
-        padding: 60px 45px;
-        background: #ffffff;
-        .ant-row {
-          & > .ant-col {
-            min-height: 750px;
-            padding: 0 30px;
-          }
-          .product-col {
-            background-color: #f7f7f7;
-
-            .product-image {
-            }
-            .product-desc {
-            }
-            .product-price {
-            }
-          }
-        }
+      &::before {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          left: calc(50% - 40px);
+          width: 80px;
+          height: 4px;
+          background-color: #ff5a00;
       }
     }
   }
