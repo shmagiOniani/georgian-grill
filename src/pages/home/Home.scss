@@ -1,7 +1,9 @@
 @import "../../styles//animation.scss";
+@import "../../styles//variables.scss";
 @import "../../styles//fonts.scss";
 
 .home-wrapper {
+  overflow: hidden;
   .ant-carousel {
     z-index: 1;
     position: relative;
@@ -20,10 +22,10 @@
         align-items: center;
         transition: all 0.3s ease-in;
         &:hover {
-          border: 1px solid #ff5a00;
+          border: 1px solid $bright-main;
           background-color: #fff;
           svg {
-            fill: #ff5a00;
+            fill: $bright-main;
           }
         }
         svg {
@@ -51,7 +53,7 @@
         color: #fff;
         line-height: 160px;
         text-align: center;
-        background-color: #30353e;
+        background-color: $dark-main;
         height: 90vh;
       }
     }
@@ -66,7 +68,7 @@
       margin-bottom: 7px;
       font-size: 18px;
       line-height: normal;
-      color: #ff5a00;
+      color: $bright-main;
     }
     div:last-child {
       font-family: "Crystal-Bold";
@@ -78,13 +80,13 @@
       padding-bottom: 28px;
       position: relative;
       &::before {
-          content: "";
-          position: absolute;
-          bottom: 0px;
-          left: calc(50% - 40px);
-          width: 80px;
-          height: 4px;
-          background-color: #ff5a00;
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: calc(50% - 40px);
+        width: 80px;
+        height: 4px;
+        background-color: $bright-main;
       }
     }
   }
@@ -94,7 +96,7 @@
     align-items: center;
     .slick-slider {
       max-width: 1320px;
-      overflow:visible;
+      overflow: visible;
 
       .slick-arrow {
         border: 1px solid #000000;
@@ -103,7 +105,6 @@
           }
         }
         svg {
-   
         }
       }
       &:hover {
@@ -133,8 +134,8 @@
           width: 298px;
           height: 298px;
           &:hover {
-          border: 1px solid #ff5a00;
-          cursor: pointer;
+            border: 1px solid $bright-main;
+            cursor: pointer;
           }
         }
         .best-choice-desc {
@@ -151,7 +152,138 @@
             margin-bottom: 9px;
             font-size: 18px;
             line-height: normal;
-            color: #ff5a00;
+            color: $bright-main;
+          }
+        }
+      }
+    }
+  }
+  .product-category {
+    padding-bottom: 70px;
+    .ant-row {
+      .ant-col {
+        .category-item {
+          position: relative;
+          &:hover {
+            cursor: pointer;
+            .bg-container {
+              img {
+                transform: scale(1.5);
+              }
+            }
+            .custom-border {
+              position: absolute;
+              top: 0;
+              left: 0;
+              padding: 10px;
+           
+              div:first-child {
+                top: 10%;
+                left: 5%;
+                width: 90%;
+                height:80%;
+                border-top: 1px solid gray;
+                border-bottom: 1px solid gray;
+              }
+              div:last-child {
+                top: 5%;
+                left: 10%;
+                width: 80%;
+                height: 90%;
+                border-left: 1px solid gray;
+                border-right: 1px solid gray;
+              }
+            }
+          }
+          .bg-container {
+            height: 80vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              height: 100%;
+              width: auto;
+              transition: all 1s ease-in-out;
+
+            }
+          }
+          .custom-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            padding: 10px;
+         
+            div:first-child {
+              position: absolute;
+              top: 10%;
+              left: 50%;
+              width: 0%;
+              height: 80%;
+              border-top: 1px solid gray;
+              border-bottom: 1px solid gray;
+              transition: all 1s ease-in-out;
+            }
+            div:last-child {
+              position: absolute;
+              top: 50%;
+              left: 10%;
+              width: 80%;
+              height: 0%;
+              border-left: 1px solid gray;
+              border-right: 1px solid gray;
+              transition: all 1s ease-in-out;
+
+            }
+          }
+          .category-title {
+            position: absolute;
+            z-index: 200;
+            top: 15%;
+            left: 20%;
+            font-family: "Crystal-Bold";
+            font-size: 2rem;
+            color: rgb(93, 170, 134);
+          }
+        }
+      }
+    }
+  }
+  .choose-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .ant-row {
+      max-width: 1320px;
+      .ant-col {
+        height: 80vh;
+        .choose-us-header {
+          font-family: "Crystal-Bold";
+          margin-bottom: 9px;
+          font-size: 18px;
+          line-height: normal;
+          color: $dark-main;
+        }
+        .image-container {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            cursor: pointer;
+            img {
+              transform: perspective(1px) translateZ(0);
+              animation: shake 1s ease-in-out;
+            }
+          }
+          img {
+            height: 100%;
+            width: auto;
           }
         }
       }

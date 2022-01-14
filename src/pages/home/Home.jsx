@@ -1,9 +1,9 @@
 import React from "react";
-import { Carousel } from "antd";
+import { Carousel, Row, Col } from "antd";
 import "antd/dist/antd.css";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import Slider from "react-slick";
-import { bg1, bg2, bg3, bg4, bg5 } from "../../assets/images";
+import { bg1, bg2, bg3, bg4, bg5, one, two, three } from "../../assets/images";
 import { NewProduct } from "./components";
 import "./Home.scss";
 
@@ -87,6 +87,109 @@ function Home() {
             );
           })}
         </Carousel>
+      </div>
+      <div className="product-category">
+        <Row>
+          <Col xs={24} md={12} lg={6}>
+            <div className="category-item">
+              <div className="bg-container">
+                <img width={480} height={720} alt="example" src={one} />
+              </div>
+              <div className="custom-border">
+                <div></div>
+                <div></div>
+              </div>
+              <div className="category-title">დასახელება</div>
+            </div>
+          </Col>
+          <Col xs={24} md={12} lg={6}>
+            <div className="category-item">
+              <div className="bg-container">
+                <img width={480} height={720} alt="example" src={two} />
+              </div>
+              <div className="custom-border">
+                <div></div>
+                <div></div>
+              </div>
+              <div className="category-title">დასახელება</div>
+            </div>
+          </Col>
+          <Col xs={24} md={12} lg={6}>
+            <div className="category-item">
+              <div className="bg-container">
+                <img width={480} height={720} alt="example" src={three} />
+              </div>
+              <div className="custom-border">
+                <div></div>
+                <div></div>
+              </div>
+              <div className="category-title">დასახელება</div>
+            </div>
+          </Col>
+          <Col xs={24} md={12} lg={6}>
+            <div className="category-item">
+              <div className="bg-container">
+                <img width={480} height={720} alt="example" src={one} />
+              </div>
+              <div className="custom-border">
+                <div></div>
+                <div></div>
+              </div>
+              <div className="category-title">დასახელება</div>
+            </div>
+          </Col>
+        </Row>
+      </div>
+      <div className="choose-us">
+        <Row>
+          <Col xs={24} lg={12}>
+            <div className="choose-us-header">
+              <h3>რატომ უნდა აგვირჩიოთ</h3>
+              <p>
+                ხანგრძლივად მცხოვრები მცენარე, რომელსაც აქვს მრავალწლოვანი
+                გახევებული ღერო და ფესვები. ბუჩქისგან განსხვავებით ხის ღერო
+                (შტამპი) და ვარჯი ყოველთვის მკვეთრად გამოხატულია.
+              </p>
+            </div>
+            <div className="choose-us-variants">
+              <div>
+                <div className="title">სატაური</div>
+                <div className="image-container">
+                  <img src={bg1} alt="" />
+                </div>
+              </div>
+              <div>
+                <div className="title">სატაური</div>
+                <div className="image-container">
+                  <img src={bg1} alt="" />
+                </div>
+              </div>
+              <div>
+                <div className="title">სატაური</div>
+                <div className="image-container">
+                  <img src={bg1} alt="" />
+                </div>
+              </div>
+            </div>
+            <div className="choose-us-blog">
+              <h4>ქვე სათაური</h4>
+              <div className="content">
+                ხანგრძლივად მცხოვრები მცენარე, რომელსაც აქვს მრავალწლოვანი
+                გახევებული ღერო და ფესვები. ბუჩქისგან განსხვავებით ხის ღერო
+                (შტამპი) და ვარჯი ყოველთვის მკვეთრად გამოხატულია. ღერო და ტოტები
+                შედგება მერქნისა და ქერქისაგან. კორომში ხეს აქვს მაღალი ღერო
+                (თითქმის ცილინდრული) და პატარა, საკმაოდ მაღლა განლაგებული ვარჯი,
+                გაშლილი ადგილზე — მოკლე და სქელი ღერო, ვარჯიც უფრო ქვემოდან
+                ეწყება.
+              </div>
+            </div>
+          </Col>
+          <Col xs={24} lg={12}>
+            <div className="image-container">
+              <img src={two} />
+            </div>
+          </Col>
+        </Row>
       </div>
     </div>
   );
