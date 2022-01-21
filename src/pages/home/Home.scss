@@ -55,6 +55,10 @@
         text-align: center;
         background-color: $dark-main;
         height: 90vh;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
@@ -63,6 +67,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 80vh;
     div:first-child {
       font-family: "Crystal";
       margin-bottom: 7px;
@@ -136,6 +141,14 @@
           &:hover {
             border: 1px solid $bright-main;
             cursor: pointer;
+            img {
+              transform: scale(1.1);
+            }
+          }
+          img {
+            width: 100%;
+            height: auto;
+            transition: all .3s ease-in-out;
           }
         }
         .best-choice-desc {
@@ -146,6 +159,12 @@
             font-weight: 700;
             line-height: 50px;
             color: #1a1a1a;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+              color: $bright-main;
+              cursor: pointer;
+            }
           }
           div:last-child {
             font-family: "Crystal-Bold";
@@ -246,7 +265,7 @@
             left: 20%;
             font-family: "Crystal-Bold";
             font-size: 2rem;
-            color: rgb(93, 170, 134);
+            color: rgb(255, 255, 255);
           }
         }
       }
@@ -260,32 +279,123 @@
       max-width: 1320px;
       .ant-col {
         height: 80vh;
+   
         .choose-us-header {
-          font-family: "Crystal-Bold";
           margin-bottom: 9px;
-          font-size: 18px;
           line-height: normal;
-          color: $dark-main;
+          h3 {
+            color: $dark-main;
+            font-family: "Crystal-Bold";
+            font-size: 40px;
+          }
+     
         }
-        .image-container {
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
+        .choose-us-variants {
           display: flex;
-          justify-content: center;
+          justify-content: space-around;
           align-items: center;
-          &:hover {
-            cursor: pointer;
-            img {
-              transform: perspective(1px) translateZ(0);
-              animation: shake 1s ease-in-out;
+          margin: 50px 0 50px;
+
+          .choose-us-item{
+            width: 160px;
+            height: 190px;
+            margin-right: 20px;
+            &:hover {
+              cursor: pointer;
+              .title {
+                text-decoration: none;
+                outline: none;
+                color: $bright-main;
+              }
+              .image-container {
+                border: 2px solid $bright-main;
+                transform: rotate(10deg);
+              }
+            }
+            .title {
+              color: #999999;
+              text-align: center;
+              margin-bottom: 20px;
+              font-size: 22px;
+              font-family: "Crystal-Bold";
+              line-height: normal;
+              text-decoration: none;
+              transition: all .3s ease-in-out;
+            }
+            .image-container {
+              margin: 0!important;
+              width: 160px;
+              height: 160px;
+              border-radius: 50%;
+              overflow: hidden;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              transition: all .3s ease-in-out;
+              &:hover {
+                cursor: pointer;
+                img {
+                  transform: perspective(1px) translateZ(0);
+                }
+              }
+              img {
+                height: 100%;
+                width: auto;
+              }
             }
           }
+        }
+        .choose-us-blog {
+          border-left: 5px solid $bright-main;
+          padding-left: 20px;
+          h4 {
+            font-family: "Crystal";
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 24px;
+            font-size: 25px;
+            margin-bottom: 10px;
+          }
+        }
+        p {
+          font-family: "Crystal";
+          color: $paragraph;
+          line-height: 24px;
+          font-size: 17px;
+        }
+      }
+      .ant-col:last-child {
+        &:hover {
+          .image-container {
+            animation: 1s shake ease-in-out;
+          }
+        }
+        .image-container {
+          height: 100%;
           img {
             height: 100%;
             width: auto;
           }
         }
+      }
+    }
+  }
+  .best-countdown {
+    height: 80vh;
+    background: #f5f5f5;
+    padding-top: 64px;
+    padding-bottom: 32px;
+    .ant-row {
+      .offer-carousel {
+        .ant-carousel {
+          .slick-slider {
+            .arrow-left{}
+            .arrow-right{}
+          }
+        }
+      }
+      .best-countdown-desc{
+        padding-top: 127px;
+        padding-left: 0px;
       }
     }
   }

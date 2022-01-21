@@ -4,6 +4,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import {Home} from "./pages"
 import { routes } from "./routes/routes";
 
 import "./App.scss";
@@ -15,6 +16,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
+        <Route exact path="/">
+          <Redirect to="/home" /> : <Home />
+        </Route>
           {routes.map((item) => (
             <Route
               exact={item.exact}

@@ -1,5 +1,7 @@
 import { Col, Row } from "antd";
 import React from "react";
+import { bg1, bg2, bg3, bg4, bg5, one, two, three } from "../../../../assets/images";
+
 import "./NewProduct.scss";
 
 function NewProduct() {
@@ -12,7 +14,7 @@ function NewProduct() {
               <div className="product-image">
                 <img
                   alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                  src={two}
                 />
               </div>
               <div className="product-title">ახალი ნივთი</div>
@@ -27,7 +29,7 @@ function NewProduct() {
                   <div className="product-image">
                     <img
                       alt="example"
-                      src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      src={one}
                     />
                   </div>
                   <div className="product-title">ახალი ნივთი</div>
@@ -40,7 +42,7 @@ function NewProduct() {
                   <div className="product-image">
                     <img
                       alt="example"
-                      src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      src={three}
                     />
                   </div>
                   <div className="product-title">ახალი ნივთი</div>

@@ -1,0 +1,28 @@
+@import "../../styles//variables.scss";
+
+.chat-bot {
+    position: relative;
+      .chat-triggerer{
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $bright-main;
+      }
+    
+      .rsc-container {
+        .rsc-header {
+          background-color: $bright-main;
+        }
+        .rsc-content {
+          .efROPc {
+            .rsc-ts-bubble {
+              background-color: $bright-main;
+            }
+          }
+        }
+      }
+    
+    }

@@ -1,0 +1,58 @@
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dot {
+    width: 2vw;
+    height: 2vw;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 10px;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  .odd {
+    animation-name: odd;
+  }
+  .even {
+    animation-name: even;
+  }
+  
+  @keyframes odd {
+    0% {
+      width: 2vw;
+      height: 2vw;
+    }
+    50% {
+      width: 4vw;
+      height: 4vw;
+    }
+    100% {
+      width: 2vw;
+      height: 2vw;
+    }
+  }
+  @keyframes even {
+    0% {
+      width: 4vw;
+      height: 4vw;
+    }
+    50% {
+      width: 2vw;
+      height: 2vw;
+    }
+    100% {
+      width: 4vw;
+      height: 4vw;
+    }
+  }
+  
