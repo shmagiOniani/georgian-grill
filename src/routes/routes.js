@@ -1,4 +1,4 @@
-import { Home, About } from "../pages";
+import { Home, About, Shop } from "../pages";
 
 export const routes = [
   {
@@ -7,6 +7,13 @@ export const routes = [
     exact: true,
     id: false,
     key: 121,
+  },
+  {
+    path: "/shop",
+    component: Shop,
+    exact: true,
+    id: false,
+    key: 213,
   },
   {
     path: "/about",

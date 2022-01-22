@@ -8,9 +8,14 @@
   }
 
 
-  @mixin animation-mixin($name, $from, $to) {
-    @keyframes #{$name} {
-      0% {transform: translate3d($from, 0, 0); opacity: 0;}
-      100% {transform: translate3d($to, 0, 0); opacity: 1;}
-    }
+@mixin animation-mixin($name, $from, $to) {
+  @keyframes #{$name} {
+    0% {transform: translate3d($from, 0, 0); opacity: 0;}
+    100% {transform: translate3d($to, 0, 0); opacity: 1;}
   }
+}
+
+@keyframes nav-anim {
+  0% { transform: translateY(-50px);}
+  100% { transform: translateY(0px);}
+}

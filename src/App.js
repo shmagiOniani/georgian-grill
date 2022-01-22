@@ -4,11 +4,12 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import {Home} from "./pages"
+import { Home } from "./pages";
 import { routes } from "./routes/routes";
 
 import "./App.scss";
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-        <Route exact path="/">
-          <Redirect to="/home" /> : <Home />
-        </Route>
+          <Route exact path="/">
+            <Redirect to="/home" /> : <Home />
+          </Route>
           {routes.map((item) => (
             <Route
               exact={item.exact}
@@ -31,6 +32,7 @@ function App() {
             <Redirect to="/home" />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

@@ -1,3 +1,14 @@
+@import "../../styles//animation.scss";
+
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  animation: 1s nav-anim ease-in-out;
+}
 .nav-wrapper {
   background-color: #2a2a2a;
   display: flex;

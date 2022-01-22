@@ -15,12 +15,26 @@
     }
   }
   .block {
+    border: 1px solid #e1e1e1;
     font-size: large;
     background-color: white;
-    border-radius: 10px;
     margin: 50px;
-    padding: 0 20px 90px;
+    padding: 15px 15px 65px;
     height: 70px;
-    width: 80px;
+    width: 80px!important;
+    &>div {
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      margin: 0;
+      padding: 0;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
   

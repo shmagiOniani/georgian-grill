@@ -1,37 +1,71 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Carousel, Row, Col, Input, Button } from "antd";
+import { ArrowLeftOutlined, ArrowRightOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import Slider from "react-slick";
 import { bg1, bg2, bg3, bg4, bg5, one, two, three } from "../../assets/images";
 import { NewProduct, CountDown } from "./components";
 import "./Home.scss";
-import Loading from "../../components/Loading/Loading"
+import Loading from "../../components/Loading/Loading";
+
+const sliderArr = [
+  {
+    name: "some category name",
+    image: bg1,
+    maxPrice: "400",
+    minPrice: "50",
+  },
+  {
+    name: "some category name",
+    image: bg2,
+    maxPrice: "400",
+    minPrice: "50",
+  },
+  {
+    name: "some category name",
+    image: bg3,
+    maxPrice: "400",
+    minPrice: "50",
+  },
+  {
+    name: "some category name",
+    image: bg4,
+    maxPrice: "400",
+    maxinice: "50",
+  },
+  {
+    name: "some category name",
+    image: bg5,
+    maxPrice: "400",
+    maxinice: "50",
+  },
+];
 
 const imgArr = [
   {
     name: "some name",
-    image: bg5,
+    image: one,
     price: "1",
   },
   {
     name: "some name",
-    image: bg2,
+    image: two,
     price: "2",
   },
   {
     name: "some name",
-    image: bg3,
+    image: three,
     price: "3",
   },
   {
     name: "some name",
-    image: bg4,
+    image: one,
     price: "450",
   },
   {
     name: "some name",
-    image: bg2,
+    image: two,
     price: "450",
   },
 ];
@@ -60,7 +94,17 @@ const secondArr = [
 ];
 
 function Home() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [qty, setQty] = useState(1)
+
+  const qtyIncrement = () => {
+    setQty(prev => prev + 1)
+  }
+  const qtyDecrement = () => {
+    if(qty > 1){
+      setQty(prev => prev - 1)
+    }
+  }
 
   const sliderSettings = {
     arrows: true,
@@ -84,9 +128,12 @@ function Home() {
     slidesToScroll: 1,
   };
 
+  
   useEffect(() => {
-    setTimeout(() => {setLoading(false)}, 1000);
-  }, [])
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
 
   return (
     <div className="home-wrapper">
@@ -95,17 +142,21 @@ function Home() {
         prevArrow={<ArrowLeftOutlined />}
         nextArrow={<ArrowRightOutlined />}
       >
-        {imgArr.map((grill, index) => {
+        {sliderArr.map((grill, index) => {
           return (
             <div key={index} className="slider-item">
-              <img  src={grill.image} />
-              <div className="name">{grill.price}</div>
-              <div className="price">{grill.name}</div>
+              <img src={grill.image} />
+              <div className="desc">
+                <div className="name">{grill.name}</div>
+                <div className="price-range">Price:<span>${grill.minPrice}</span>-<span>${grill.maxPrice}</span></div>
+                <div className="shop-btn">Shop Now</div>
+              </div>
             </div>
           );
         })}
       </Carousel>
       <NewProduct />
+      {/* best choice */}
       <div className="best-choice-header">
         <div>საუკეთესო არჩევანი</div>
         <div>ჩვენი ყველაზე გაყიდვადი პროდუქტი</div>
@@ -127,6 +178,7 @@ function Home() {
           })}
         </Carousel>
       </div>
+      {/* product category */}
       <div className="product-category">
         <Row>
           {secondArr.map((item, index) => {
@@ -155,6 +207,7 @@ function Home() {
           })}
         </Row>
       </div>
+      {/* why choose us */}
       <div className="choose-us">
         <Row>
           <Col xs={24} lg={12}>
@@ -206,6 +259,7 @@ function Home() {
           </Col>
         </Row>
       </div>
+      {/* offer with countdown */}
       <div className="best-countdown">
         <Row>
           <Col xs={24} lg={12} className="offer-carousel">
@@ -216,26 +270,43 @@ function Home() {
                     <div className="best-choice-image">
                       <img alt="example" src={item.image} />
                     </div>
-                    <div className="best-choice-desc">
+                    {/* <div className="best-choice-desc">
                       <div>პროდუქტის აღწერა</div>
                       <div>$550.00</div>
-                    </div>
+                    </div> */}
                   </div>
                 );
               })}
             </Carousel>
           </Col>
           <Col xs={24} lg={12} className="best-countdown-desc">
-            <div className="offer-title">სათაური </div>
-            <div className="offer-price">1,660.00</div>
+            <div className="offer-title">
+              <h3>
+                <Link to={"#"}>სათაური</Link>
+              </h3>
+            </div>
+            <div className="offer-price">
+              <del className="old">
+                <div>$3,600,00</div>
+              </del>
+              <ins className="new">
+                <div >$1,660.00</div>
+              </ins>
+            </div>
+            <div className="offer-stock">+10 ცალი</div>
             <div className="offer-desc">
               ხანგრძლივად მცხოვრები მცენარე, რომელსაც აქვს მრავალწლოვანი
               გახევებული ღერო და ფესვები. ბუჩქისგან განსხვავებით ხის ღერო
               (შტამპი) და ვარჯი ყოველთვის მკვეთრად გამოხატულია.
             </div>
             <div className="offer-qty">
-              <Input />
-              <Button></Button>
+              <div className="qty">QTY</div>
+              <div className="input">
+                <div className="minus qty-btn" onClick={qtyDecrement}><MinusOutlined /></div>
+                <Input value={qty} onChange={(e) => setQty(e.target.value)} />
+                <div className="plus qty-btn" onClick={qtyIncrement}><PlusOutlined /></div>
+              </div>
+              <Button className="add-button">კალათში დამატება</Button>
             </div>
             <div className="offer-countdown">
               <CountDown />
@@ -244,7 +315,6 @@ function Home() {
         </Row>
       </div>
       {loading && <Loading />}
-      
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Input } from "antd";
 import { ShoppingCartOutlined, SearchOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
@@ -46,8 +46,20 @@ function Navbar() {
     console.log(form.getFieldValue().search);
   };
 
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+      const onScroll = () => setOffset(window.pageYOffset);
+      // clean up code
+      window.removeEventListener('scroll', onScroll);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  console.log(offset); 
+
   return (
-    <div className="nav-wrapper">
+    <div className={`nav-wrapper ${offset > 100 && "fixed"}`}>
       <div className="nav-container">
         <div className="logo">logo</div>
         <div className="navigation">
