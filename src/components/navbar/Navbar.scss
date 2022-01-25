@@ -14,7 +14,6 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
-
   .nav-container {
     max-width: 1320px;
     width: 100%;
@@ -97,6 +96,19 @@
           transition: all 0.3s ease;
         }
       }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .nav-container {
+    padding: 20px;
+    .navigation {
+      display: none;
+    }
+    .search-cart {
+      display: none!important;
     }
   }
 }

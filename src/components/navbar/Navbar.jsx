@@ -17,7 +17,7 @@ const navigationArr = [
     options: ["item", "item", "item", "item", "item"],
   },
   {
-    label: "Blog",
+    label: "რეცეპტები",
     link: "/blog",
     type: "dropdown",
     options: ["item", "item", "item", "item", "item"],
@@ -49,14 +49,14 @@ function Navbar() {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-      const onScroll = () => setOffset(window.pageYOffset);
-      // clean up code
-      window.removeEventListener('scroll', onScroll);
-      window.addEventListener('scroll', onScroll, { passive: true });
-      return () => window.removeEventListener('scroll', onScroll);
+    const onScroll = () => setOffset(window.pageYOffset);
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  console.log(offset); 
+  console.log(offset);
 
   return (
     <div className={`nav-wrapper ${offset > 100 && "fixed"}`}>
@@ -73,6 +73,7 @@ function Navbar() {
             })}
           </ul>
         </div>
+
         <div className="search-cart">
           <div className="search">
             <Form
@@ -94,6 +95,17 @@ function Navbar() {
           <div className="cart">
             <ShoppingCartOutlined />
           </div>
+        </div>
+        <div className="mobile-navigation">
+          <ul>
+            {navigationArr.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Link to={item.link}>{item.label}</Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </div>
