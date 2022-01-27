@@ -15,10 +15,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
         <Switch>
           <Route exact path="/">
-            <Redirect to="/home" /> : <Home />
+            <Redirect to="/" />  <Home />
           </Route>
           {routes.map((item) => (
             <Route
@@ -28,9 +28,9 @@ function App() {
               key={item.key}
             />
           ))}
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
+          {/* <Route exact path="/">
+            <Redirect to="/" />
+          </Route> */}
         </Switch>
         <Footer />
       </div>

@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Carousel, Row, Col, Input, Button } from "antd";
-import { ArrowLeftOutlined, ArrowRightOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
+import {
+  ArrowLeftOutlined,
+  ArrowRightOutlined,
+  MinusOutlined,
+  PlusOutlined,
+} from "@ant-design/icons";
 import "antd/dist/antd.css";
 import Slider from "react-slick";
 import { bg1, bg2, bg3, bg4, bg5, one, two, three } from "../../assets/images";
@@ -95,16 +100,16 @@ const secondArr = [
 
 function Home() {
   const [loading, setLoading] = useState(true);
-  const [qty, setQty] = useState(1)
+  const [qty, setQty] = useState(1);
 
   const qtyIncrement = () => {
-    setQty(prev => prev + 1)
-  }
+    setQty((prev) => prev + 1);
+  };
   const qtyDecrement = () => {
-    if(qty > 1){
-      setQty(prev => prev - 1)
+    if (qty > 1) {
+      setQty((prev) => prev - 1);
     }
-  }
+  };
 
   const sliderSettings = {
     arrows: true,
@@ -128,7 +133,6 @@ function Home() {
     slidesToScroll: 1,
   };
 
-  
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -146,10 +150,15 @@ function Home() {
           return (
             <div key={index} className="slider-item">
               <img src={grill.image} />
-              <div className="desc">
-                <div className="name">{grill.name}</div>
-                <div className="price-range">Price:<span>${grill.minPrice}</span>-<span>${grill.maxPrice}</span></div>
-                <div className="shop-btn">Shop Now</div>
+              <div className="desc-wrapper">
+                <div className="desc">
+                  <div className="name">{grill.name}</div>
+                  <div className="price-range">
+                    Price:<span>${grill.minPrice}</span>-
+                    <span>${grill.maxPrice}</span>
+                  </div>
+                  <div className="shop-btn">Shop Now</div>
+                </div>
               </div>
             </div>
           );
@@ -290,7 +299,7 @@ function Home() {
                 <div>$3,600,00</div>
               </del>
               <ins className="new">
-                <div >$1,660.00</div>
+                <div>$1,660.00</div>
               </ins>
             </div>
             <div className="offer-stock">+10 ცალი</div>
@@ -302,9 +311,13 @@ function Home() {
             <div className="offer-qty">
               <div className="qty">QTY</div>
               <div className="input">
-                <div className="minus qty-btn" onClick={qtyDecrement}><MinusOutlined /></div>
+                <div className="minus qty-btn" onClick={qtyDecrement}>
+                  <MinusOutlined />
+                </div>
                 <Input value={qty} onChange={(e) => setQty(e.target.value)} />
-                <div className="plus qty-btn" onClick={qtyIncrement}><PlusOutlined /></div>
+                <div className="plus qty-btn" onClick={qtyIncrement}>
+                  <PlusOutlined />
+                </div>
               </div>
               <Button className="add-button">კალათში დამატება</Button>
             </div>

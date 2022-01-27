@@ -37,10 +37,10 @@
       }
       &:hover {
         .slick-prev {
-          left: 5%;
+          left: -5%;
         }
         .slick-next {
-          right: 5%;
+          right: -5%;
         }
       }
       .slick-prev {
@@ -48,6 +48,14 @@
       }
       .slick-next {
         right: -5%;
+      }
+      @media screen and (max-width: 1300px) {
+        .slick-prev {
+          left: 5%!important;
+        }
+        .slick-next {
+          right: 5%!important;
+        }
       }
       .slider-item {
         position: relative;
@@ -60,40 +68,46 @@
           width: 100%;
           height: auto;
         }
-        .desc {
+        .desc-wrapper {
           position: absolute;
           bottom: calc(50% - 200px);
-          left: 10%;
-          .name {
-            font-size: 60px;
-            line-height: normal;
-            font-weight: 700;
-            color: #ffffff;
-            max-width: 440px;
-            text-align: initial;
-            position: relative;
-            margin-bottom: 50px;
-            &::after {
-              content: "";
-              position: absolute;
-              bottom: -30px;
-              left: 0;
-              height: 6px;
-              width: 40px;
-              background-color: $bright-main;
+          left: 0;
+          width: 100%;
+          .desc {
+            margin: auto;
+            width: 100%;
+            max-width: 1320px;
+            .name {
+              font-size: 60px;
+              line-height: normal;
+              font-weight: 700;
+              color: #ffffff;
+              max-width: 440px;
+              text-align: initial;
+              position: relative;
+              margin-bottom: 50px;
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: -30px;
+                left: 0;
+                height: 6px;
+                width: 40px;
+                background-color: $bright-main;
+              }
             }
-          }
-          .price-range {
-            font-size: 24px;
-            line-height: normal;
-            font-weight: 700;
-            color: #ffffff;
-            span {
-              color: $bright-main;
+            .price-range {
+              font-size: 24px;
+              line-height: normal;
+              font-weight: 700;
+              color: #ffffff;
+              span {
+                color: $bright-main;
+              }
             }
-          }
-          .shop-btn {
-            @include orange-filled;
+            .shop-btn {
+              @include orange-filled;
+            }
           }
         }
       }
