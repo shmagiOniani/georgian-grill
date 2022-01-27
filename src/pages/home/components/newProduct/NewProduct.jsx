@@ -17,7 +17,7 @@ function NewProduct() {
                   src={two}
                 />
               </div>
-              <div className="product-title">ახალი ნივთი</div>
+              {/* <div className="product-title">ახალი ნივთი</div> */}
               <div className="product-desc">
                 <span>ნივთზე ფასდაკლება</span>
                 <span>- 30% მდე</span>
@@ -32,7 +32,7 @@ function NewProduct() {
                       src={one}
                     />
                   </div>
-                  <div className="product-title">ახალი ნივთი</div>
+                  {/* <div className="product-title">ახალი ნივთი</div> */}
                   <div className="product-desc">
                     <span>ნივთზე ფასდაკლება</span>
                     <span>- 30% მდე</span>
@@ -45,7 +45,7 @@ function NewProduct() {
                       src={three}
                     />
                   </div>
-                  <div className="product-title">ახალი ნივთი</div>
+                  {/* <div className="product-title">ახალი ნივთი</div> */}
                   <div className="product-desc">
                     <span>ნივთზე ფასდაკლება</span>
                     <span>- 30% მდე</span>

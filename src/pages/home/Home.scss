@@ -22,6 +22,7 @@
         justify-content: center;
         align-items: center;
         transition: all 0.3s ease-in;
+     
         &:hover {
           border: 1px solid $bright-main;
           background-color: #fff;
@@ -49,12 +50,25 @@
       .slick-next {
         right: -5%;
       }
+      @media screen  and (max-width: 500px) {
+        .slick-arrow {
+          transform: scale(.8) ;
+        }
+        .slick-prev {
+          right: 17% !important;
+        }
+    }
       @media screen and (max-width: 1300px) {
         .slick-prev {
-          left: 5%!important;
+          left: auto!important;
+          bottom: 80px;
+          top: auto;
+          right: 12%;
         }
         .slick-next {
           right: 5%!important;
+          bottom: 80px;
+          top: auto;
         }
       }
       .slider-item {
@@ -63,7 +77,9 @@
         color: #fff;
         line-height: 160px;
         background-color: $dark-main;
-        height: 90vh;
+        height: fit-content;
+        max-height: 90vh;
+        min-height: 35vh;
         img {
           width: 100%;
           height: auto;
@@ -73,6 +89,11 @@
           bottom: calc(50% - 200px);
           left: 0;
           width: 100%;
+          @media screen  and (max-width: 500px) {
+            .desc {
+              transform: scale(.5) translateX(-170px);
+            }
+          }
           .desc {
             margin: auto;
             width: 100%;

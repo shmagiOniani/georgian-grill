@@ -24,11 +24,17 @@
         & > .ant-col {
           min-height: 360px;
           padding: 0 30px;
+          @media screen and (max-width: 500px) {
+            padding: 0 17px;
+          }
         }
         .product-col {
           position: relative;
           background-color: #f7f7f7;
           overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           &:hover {
             cursor: pointer;
             .product-image {
@@ -62,13 +68,23 @@
           }
           .product-desc {
             position: absolute;
-            top: 60px;
+            top: 10px;
             left: 40px;
             font-family: "Crystal-Bold";
             font-size: 36px;
             font-weight: 700;
             line-height: 50px;
             color: #1a1a1a;
+            @media screen and (max-width: 500px) {
+              font-size: 18px;
+              line-height: 28px;
+              span:last-child {
+                &::before {
+                  bottom: -7px!important;
+                 height: 3px!important;
+                }
+              }
+            }
             span {
               display: block;
             }
