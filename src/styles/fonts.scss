@@ -17,3 +17,49 @@
     font-family: 'Crystal-Italic';
     src: url("../assets//fonts//BPG_SSP_Crystal_Italic.ttf");
 }
+
+
+$base-color: gray;
+
+@mixin h1 {
+    font-size: clamp(24px, 4vw, 34px)!important;
+    color: $base-color;
+      &:lang(ka) {
+      font-size: clamp(24px, 4vw, 29px)!important;
+    }
+  }
+  @mixin h2 {
+    font-size: clamp(22px, 4vw, 30px)!important;
+    color: $base-color;
+      &:lang(ka) {
+      font-size: clamp(22px, 4vw, 25px)!important;
+    }
+  }
+  @mixin h3 {
+    font-size: clamp(20px, 4vw, 26px)!important;
+    color: $base-color;
+      &:lang(ka) {
+      font-size: clamp(20px, 4vw, 23px)!important;
+    }
+  }
+  @mixin h4 {
+    font-size: clamp(18px, 4vw, 22px)!important;
+    color: $base-color;
+      &:lang(ka) {
+      font-size: clamp(18px, 4vw, 19px)!important;
+    }
+  }
+  @mixin h5 {
+    font-size: clamp(16px, 4vw, 18px)!important;
+    color: $base-color;
+      &:lang(ka) {
+      font-size: clamp(13px, 4vw, 15px)!important;
+    }
+  }
+  @mixin p {
+    font-size: clamp(10px, 4vw, 12px)!important;
+    color: $base-color;
+      &:lang(ka) {
+      font-size: clamp(8px, 4vw, 11px)!important;
+    }
+  }

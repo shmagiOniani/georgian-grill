@@ -38,10 +38,10 @@
       }
       &:hover {
         .slick-prev {
-          left: -5%;
+          left: 5%;
         }
         .slick-next {
-          right: -5%;
+          right: 5%;
         }
       }
       .slick-prev {
@@ -86,7 +86,7 @@
         }
         .desc-wrapper {
           position: absolute;
-          bottom: calc(50% - 200px);
+          bottom: calc(50% - 165px);
           left: 0;
           width: 100%;
           @media screen  and (max-width: 500px) {
@@ -99,6 +99,7 @@
             width: 100%;
             max-width: 1320px;
             .name {
+
               font-size: 60px;
               line-height: normal;
               font-weight: 700;

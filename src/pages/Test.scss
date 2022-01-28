@@ -1,0 +1,36 @@
+@import "../styles/fonts.scss";
+
+.test-container {
+    display: flex;
+    .container {
+        h1{
+            margin: 0;
+            @include h1;
+            
+        }
+        h2{
+            margin: 0;
+            @include h2;
+        }
+        h3{
+            margin: 0;
+            @include h3;
+        }
+        h4{
+            margin: 0;
+            @include h4;
+            
+            
+        }
+        h5{
+            margin: 0;
+            @include h5;
+            
+        }
+        p{
+            margin: 0;
+            @include p;
+
+        }
+    }
+}

@@ -10,6 +10,7 @@ import { routes } from "./routes/routes";
 import "./App.scss";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/">
             <Redirect to="/" />  <Home />
           </Route>
+          <Route exact path="/test" component={Test}/>
           {routes.map((item) => (
             <Route
               exact={item.exact}
